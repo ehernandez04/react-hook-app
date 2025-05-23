@@ -1,0 +1,30 @@
+
+name: Lint Code
+
+on:
+    pull_request:
+        branches: [main]
+    push:
+        branches: [main]
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Clonar el codigo
+              uses: actions/checkout@v4
+
+            - name: Usar Node.js 20
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+
+            - name: Instalar Yarn
+              run: npm install -g yarn
+
+            - name: Instalar dependencias con yarn   
+              run: yarn install --frozen-lockfile
+
+            - name: Run ESLint
+              run: yarn lint
