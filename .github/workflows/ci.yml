@@ -22,7 +22,6 @@ jobs:
               run: yarn install --frozen-lockfile
             - name: Compilar la app con vite
               run: yarn build
-
             - name: Hacer deploy a Github Pages
               run: yarn deploy
               env:
