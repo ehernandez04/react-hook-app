@@ -12,23 +12,17 @@ jobs:
         steps:
             - name: Clonar el codigo
               uses: actions/checkout@v4
-
             - name: Usar Node.js 20
               uses: actions/setup-node@v4
               with:
                 node-version: '20'
-                cache: 'yarn'
-
             - name: Instalar Yarn
               run: npm install -g yarn
-
             - name: Instalar dependencias con yarn   
               run: yarn install --frozen-lockfile
-
             - name: Compilar la app con vite
               run: yarn build
             - name: Hacer deploy a Github Pages
-              uses: peaceiris/actions-gh-pages@v3
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                publish_dir: ./dist  # Vite genera la build en /dis
+              run: yarn deploy
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
