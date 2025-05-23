@@ -1,0 +1,22 @@
+name: React CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+    build: 
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Clonar el codigo
+              uses: actions/checkout@v4
+            - name: Usar Node.js 20
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+            - name: Instalar dependencias   
+              run: npm install
+            - name: Compilar la app con vite
+              run: npm run build
