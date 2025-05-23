@@ -16,7 +16,9 @@ jobs:
               uses: actions/setup-node@v4
               with:
                 node-version: '20'
-            - name: Instalar dependencias   
-              run: npm install
+            - name: Instalar Yarn
+              run: npm install -g yarn
+            - name: Instalar dependencias con yarn   
+              run: yarn install --frozen-lockfile
             - name: Compilar la app con vite
-              run: npm run build
+              run: yarn build
