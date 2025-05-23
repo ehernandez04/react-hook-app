@@ -8,6 +8,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <HooksApp /> */}
     {/* <CounterApp /> */}
-    <CounterWithCustomHook></CounterWithCustomHook>
+    <CounterWithCustomHook />
   </StrictMode>,
 );
