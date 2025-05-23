@@ -27,6 +27,8 @@ jobs:
             - name: Instalar dependencias con yarn   
               run: yarn install --frozen-lockfile
 
+            - name: Build la app
+              run: yarn build || (echo "Build failed" && exit 1)
             - name: Listar archivos y directorios
               run: ls -la
             - name: Listar carpeta dist
