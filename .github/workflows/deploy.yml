@@ -27,6 +27,11 @@ jobs:
             - name: Instalar dependencias con yarn   
               run: yarn install --frozen-lockfile
 
+            - name: Listar archivos y directorios
+              run: ls -la
+            - name: Listar carpeta dist
+              run: ls -la dist || echo "dist folder no existe"
+
             - name: Hacer deploy a Github Pages
               run: yarn deploy
               env:
