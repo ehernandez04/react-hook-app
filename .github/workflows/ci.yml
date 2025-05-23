@@ -1,4 +1,4 @@
-name: React CI
+name: React CI + Deploy Vite con Yarn
 on:
   push:
     branches: [main]
@@ -22,3 +22,8 @@ jobs:
               run: yarn install --frozen-lockfile
             - name: Compilar la app con vite
               run: yarn build
+
+            - name: Hacer deploy a Github Pages
+              run: yarn deploy
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
