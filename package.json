@@ -11,7 +11,7 @@
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "format": "prettier --write .",
-    "deploy": "gh-pages -d dist -u \"github-actions-bot <github-actions-bot@noreply.github.com>\""
+    "deploy": "gh-pages -d dist -u \"github-actions[bot] <github-actions[bot]@users.noreply.github.com>\" --repo https://x-access-token:${GITHUB_TOKEN}@github.com/ehernandez04/react-hook-app.git"
   },
   "dependencies": {
     "react": "^19.1.0",
