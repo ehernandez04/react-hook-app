@@ -10,7 +10,8 @@
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "format": "prettier --write .",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -u \"github-actions[bot] <github-actions[bot]@users.noreply.github.com>\"",
+    "homepage": "https://ehernandez04.github.io/react-hook-app/"
   },
   "dependencies": {
     "react": "^19.1.0",
